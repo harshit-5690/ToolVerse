@@ -2,10 +2,10 @@ const apps = [
 
 {
 name:"ChatGPT",
-image:"https://cdn.simpleicons.org/openai",
+image:"https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
 description:"AI Assistant",
 link:"https://chatgpt.com"
-},
+}
 
 {
 name:"Gemini",
