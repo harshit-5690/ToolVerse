@@ -1,8 +1,18 @@
 // ToolVerse Apps Data
 
-const apps = [function downloadPrompt() {
+const apps = [;
 
-const text = "My Prompt Here";
+
+
+{
+name:"ChatGPT",
+image:"IMG_20260611_215851_582.webp",
+description:"AI Assistant by OpenAI",
+link:"#"
+},
+function downloadPrompt() {
+
+const text = "JAI SHREE RAM ";
 
 const blob = new Blob([text], {
 type: "text/plain"
@@ -17,13 +27,6 @@ a.download = "prompt.txt";
 a.click();
 
 }
-
-{
-name:"ChatGPT",
-image:"IMG_20260611_215851_582.webp",
-description:"AI Assistant by OpenAI",
-link:"#"
-},
 
 {
 name:"Gemini",
