@@ -3,275 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harshit Portfolio</title>
+<title>ToolVerse</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#070b14;
-color:white;
-overflow-x:hidden;
-}
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at 20% 20%,rgba(0,170,255,.25),transparent 25%),
-radial-gradient(circle at 80% 30%,rgba(140,0,255,.2),transparent 25%);
-z-index:-1;
-}
-
-header{
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:30px;
-font-weight:bold;
-color:#00bfff;
-}
-
-.profile-icon{
-width:45px;
-height:45px;
-background:#111827;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.hero{
-margin:15px;
-background:#111827;
-border-radius:25px;
-overflow:hidden;
-box-shadow:0 0 25px rgba(0,170,255,.15);
-}
-
-.hero img{
-width:100%;
-height:280px;
-object-fit:cover;
-display:block;
-}
-
-.hero-content{
-padding:20px;
-}
-
-.hero h1{
-font-size:35px;
-margin-bottom:10px;
-}
-
-.hero p{
-color:#bdbdbd;
-}
-
-.btn{
-display:inline-block;
-margin-top:15px;
-padding:12px 20px;
-background:#00bfff;
-color:white;
-text-decoration:none;
-border-radius:12px;
-}
-
-.search{
-padding:15px;
-}
-
-.search input{
-width:100%;
-padding:14px;
-border:none;
-border-radius:15px;
-background:#111827;
-color:white;
-outline:none;
-}
-
-.section-title{
-padding:15px;
-font-size:24px;
-font-weight:bold;
-}
-
-.cards{
-padding:15px;
-display:grid;
-gap:15px;
-}
-
-.card{
-background:#111827;
-padding:20px;
-border-radius:20px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-4px);
-}
-
-.card h3{
-margin-bottom:10px;
-color:#00bfff;
-}
-
-.card p{
-color:#c7c7c7;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-padding:15px;
-}
-
-.stat{
-background:#111827;
-padding:15px;
-text-align:center;
-border-radius:18px;
-}
-
-.stat h2{
-color:#00bfff;
-}
-
-.bottom-nav{
-position:fixed;
-bottom:15px;
-left:15px;
-right:15px;
-background:#111827;
-border-radius:30px;
-display:flex;
-justify-content:space-around;
-padding:15px;
-}
-
-.bottom-nav a{
-color:white;
-text-decoration:none;
-font-size:22px;
-}
-
-footer{
-text-align:center;
-padding:30px;
-color:#888;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<div class="logo">ToolVerse</div>
-<div class="profile-icon">🚀</div>
+<header class="navbar">
+    <h1 class="logo">ToolVerse</h1>
+
+    <div class="search-box">
+        <input
+        type="text"
+        id="search"
+        placeholder="Search apps...">
+    </div>
 </header>
 
 <section class="hero">
-<img src="IMG_20260611_215851_582.webp">
+
+<img
+src="IMG_20260611_215851_582.webp"
+alt="Banner">
 
 <div class="hero-content">
-<h1>Hi, I'm Harshit 👋</h1>
-<p>Student • Tech Enthusiast • Website Creator</p>
-
-<a href="#" class="btn">Explore</a>
+<h2>Discover Amazing Apps</h2>
+<p>Apps • AI Tools • Downloads</p>
 </div>
+
 </section>
 
-<div class="search">
-<input id="search" type="text" placeholder="Search...">
-</div>
+<section class="categories">
 
-<div class="stats">
-<div class="stat">
-<h2>16</h2>
-<p>Age</p>
-</div>
+<button>🔥 All</button>
+<button>📱 Apps</button>
+<button>✨ AI</button>
+<button>🎮 Games</button>
 
-<div class="stat">
-<h2>GitHub</h2>
-<p>Pages</p>
-</div>
+</section>
 
-<div class="stat">
-<h2>∞</h2>
-<p>Ideas</p>
-</div>
-</div>
+<h2 class="section-title">
+Popular Apps
+</h2>
 
-<h2 class="section-title">About Me</h2>
-
-<div class="cards" id="cards">
-
-<div class="card">
-<h3>👨 About</h3>
-<p>
-My name is Harshit. I enjoy learning technology,
-creating websites and exploring new digital tools.
-</p>
-</div>
-
-<div class="card">
-<h3>🚀 Skills</h3>
-<p>
-HTML, GitHub Pages, Web Design, Technology.
-</p>
-</div>
-
-<div class="card">
-<h3>📱 Projects</h3>
-<p>
-ToolVerse and future web projects.
-</p>
-</div>
+<div id="appContainer">
 
 </div>
 
-<footer>
-Made with ❤️ by Harshit
-</footer>
+<nav class="bottom-nav">
 
-<div class="bottom-nav">
 <a href="#">🏠</a>
 <a href="#">🔍</a>
 <a href="#">📂</a>
 <a href="#">👤</a>
-</div>
 
-<script>
-const search=document.getElementById("search");
+</nav>
 
-search.addEventListener("keyup",()=>{
-let value=search.value.toLowerCase();
-
-document.querySelectorAll(".card").forEach(card=>{
-card.style.display=
-card.innerText.toLowerCase().includes(value)
-? "block"
-: "none";
-});
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
