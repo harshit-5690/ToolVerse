@@ -1,25 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ToolVerse</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1 class="logo">ToolVerse</h1>
+<header>
+<h1>ToolVerse</h1>
+<input type="text" id="search" placeholder="Search apps...">
+</header>
 
-<input
-type="text"
-id="search"
-placeholder="Search apps...">
+<div class="banner">
+<img src="IMG_20260611_215851_582.webp">
+<div class="banner-text">
+<h2>Discover Amazing Apps</h2>
+<p>Apps • AI Tools • Downloads</p>
+</div>
+</div>
+
+<div class="categories">
+<button>🔥 All</button>
+<button>📱 Apps</button>
+<button>✨ AI</button>
+<button>🎮 Games</button>
+</div>
+
+<h2 class="section-title">Popular Apps</h2>
 
 <div id="appContainer"></div>
 
-<script src="script.js"></script>
+<div class="bottom-nav">
+<span>🏠</span>
+<span>🔍</span>
+<span>📂</span>
+<span>👤</span>
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
