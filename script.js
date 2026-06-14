@@ -1,6 +1,22 @@
 // ToolVerse Apps Data
 
-const apps = [
+const apps = [function downloadPrompt() {
+
+const text = "My Prompt Here";
+
+const blob = new Blob([text], {
+type: "text/plain"
+});
+
+const a = document.createElement("a");
+
+a.href = URL.createObjectURL(blob);
+
+a.download = "prompt.txt";
+
+a.click();
+
+}
 
 {
 name:"ChatGPT",
