@@ -1,55 +1,70 @@
-// ToolVerse Apps Data
+// =========================
+// TOOLVERSE APPS DATABASE
+// =========================
 
-const apps = [;
-
-
+const apps = [
 
 {
 name:"ChatGPT",
-image:"IMG_20260611_215851_582.webp",
+image:"https://cdn.simpleicons.org/openai",
 description:"AI Assistant by OpenAI",
-link:"#"
+link:"https://chatgpt.com"
 },
-function downloadPrompt() {
-
-const text = "JAI SHREE RAM ";
-
-const blob = new Blob([text], {
-type: "text/plain"
-});
-
-const a = document.createElement("a");
-
-a.href = URL.createObjectURL(blob);
-
-a.download = "prompt.txt";
-
-a.click();
-
-}
 
 {
 name:"Gemini",
-image:"IMG_20260611_215851_582.webp",
+image:"https://cdn.simpleicons.org/google",
 description:"Google AI Assistant",
-link:"#"
+link:"https://gemini.google.com"
 },
 
 {
-name:"ToolVerse",
-image:"IMG_20260611_215851_582.webp",
-description:"Apps, Tools & Downloads",
-link:"#"
+name:"GitHub",
+image:"https://cdn.simpleicons.org/github",
+description:"Code Hosting Platform",
+link:"https://github.com"
+},
+
+{
+name:"YouTube",
+image:"https://cdn.simpleicons.org/youtube",
+description:"Video Platform",
+link:"https://youtube.com"
+},
+
+{
+name:"Instagram",
+image:"https://cdn.simpleicons.org/instagram",
+description:"Social Media App",
+link:"https://instagram.com"
+},
+
+{
+name:"Discord",
+image:"https://cdn.simpleicons.org/discord",
+description:"Gaming Community",
+link:"https://discord.com"
+},
+
+{
+name:"Telegram",
+image:"https://cdn.simpleicons.org/telegram",
+description:"Messaging App",
+link:"https://telegram.org"
 }
 
 ];
 
-// Container
+// =========================
+// APP CONTAINER
+// =========================
 
 const appContainer =
 document.getElementById("appContainer");
 
-// Create Cards
+// =========================
+// RENDER APPS
+// =========================
 
 function renderApps(data){
 
@@ -61,7 +76,10 @@ appContainer.innerHTML += `
 
 <div class="app-card">
 
-<img src="${app.image}">
+<img
+src="${app.image}"
+alt="${app.name}"
+loading="lazy">
 
 <h3>${app.name}</h3>
 
@@ -69,9 +87,10 @@ appContainer.innerHTML += `
 
 <a
 href="${app.link}"
+target="_blank"
 class="download-btn">
 
-Open
+Open App
 
 </a>
 
@@ -83,11 +102,13 @@ Open
 
 }
 
-// Initial Load
+// Initial Render
 
 renderApps(apps);
 
-// Search
+// =========================
+// SEARCH
+// =========================
 
 const search =
 document.getElementById("search");
@@ -100,7 +121,8 @@ search.value.toLowerCase();
 const filtered =
 apps.filter(app=>
 
-app.name.toLowerCase()
+app.name
+.toLowerCase()
 .includes(value)
 
 ||
@@ -115,7 +137,9 @@ renderApps(filtered);
 
 });
 
-// Future Function
+// =========================
+// ADD APP FUNCTION
+// =========================
 
 function addApp(
 name,
@@ -136,3 +160,40 @@ link
 renderApps(apps);
 
 }
+
+// =========================
+// DOWNLOAD PROMPT
+// =========================
+
+function downloadPrompt(){
+
+const text = `
+ToolVerse Prompt
+
+Create a cinematic portrait
+with dramatic lighting,
+ultra realistic details,
+8K quality,
+sharp focus,
+professional photography.
+`;
+
+const blob =
+new Blob([text],{
+
+type:"text/plain"
+
+});
+
+const a =
+document.createElement("a");
+
+a.href =
+URL.createObjectURL(blob);
+
+a.download =
+"ToolVerse-Prompt.txt";
+
+a.click();
+
+  }
